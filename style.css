@@ -1,36 +1,70 @@
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #6221c5;
-    color: white;
-    padding: 8px;
-    z-index: 100;
-}
-.skip-link:focus { top: 0; }
-
+/* --- STILURI GLOBALE (Valabile pentru toate paginile) --- */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f9; /* Gri foarte deschis */
     color: #333;
 }
 
-header, nav, main, footer {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
+header {
+    background-color: #6221c5; /* Movul tău reprezentativ */
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* Navigarea - Va arăta la fel pe toate paginile */
+nav {
+    background-color: #fff;
+    border-bottom: 3px solid #6221c5;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
     display: flex;
-    gap: 15px;
-    background: #f4f4f4;
+    justify-content: center;
+    gap: 20px;
 }
 
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #6221c5;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #6221c5;
+    color: white;
+}
+
+/* Containerul principal de conținut */
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    min-height: 60vh; /* Se asigură că pagina nu e prea scurtă */
+}
+
+h2 {
+    color: #6221c5;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* --- STILURI SPECIFICE (Se vor activa doar unde există elementele) --- */
+
+/* Pagina Projects Data (Tabele) */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -43,17 +77,16 @@ th, td {
     text-align: left;
 }
 
-th { background-color: #6221c5; color: white; }
-
-fieldset {
-    border: 1px solid #6221c5;
-    margin-bottom: 10px;
+th { 
+    background-color: #6221c5; 
+    color: white; 
 }
 
-form {
-    max-width: 500px;
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Efect de rânduri alternate */
 }
 
+/* Pagina Contact (Formular) */
 fieldset {
     border: 2px solid #6221c5;
     border-radius: 8px;
@@ -67,32 +100,47 @@ legend {
     color: #6221c5;
 }
 
-label {
-    display: inline-block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="email"],
-select,
-textarea {
+input[type="text"], input[type="email"], select, textarea {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
+    margin: 8px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Foarte important pentru lățime */
 }
 
 button {
     background-color: #6221c5;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
 button:hover {
     background-color: #4a1896;
 }
+
+/* Footer uniform */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    margin-top: 50px;
+}
+
+/* Stil pentru link-ul de accesibilitate */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: #6221c5;
+    color: white;
+    padding: 10px;
+    z-index: 100;
+}
+.skip-link:focus { top: 0; }
